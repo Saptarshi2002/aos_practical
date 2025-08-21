@@ -1,0 +1,6 @@
+
+true Every Vertex can be reached from 0
+true Every Vertex can be reached from 1
+true Every Vertex can be reached from 2
+true Every Vertex can be reached from 3
+true Every Vertex can be reached from 4

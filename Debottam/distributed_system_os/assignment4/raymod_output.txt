@@ -1,0 +1,130 @@
+Output set1:
+------------ 
+Raymond's algorithm
+Enter total node of sites you need: 5
+Enter the holder of site 0 : 0
+Enter the holder of site 1 : 0
+Enter the holder of site 2 : 0
+Enter the holder of site 3 : 1
+Enter the holder of site 4 : 1
+Holder of Site: 0 is 0
+Holder of Site: 1 is 0
+Holder of Site: 2 is 0
+Holder of Site: 3 is 1
+Holder of Site: 4 is 1
+Site 1 is Started     
+Site 2 is Started     
+Site 3 is Started     
+Site 4 is Started
+Site 0 is Started
+The Site: 0 Entering critical section
+The Site: 0 Exiting critical section
+Local Queue for site 0
+2 Requested for token to 0
+1 Requested for token to 0
+0 Received token request from 2
+4 Requested for token to 1
+1 Received token request from 4
+3 Requested for token to 1
+1 Received token request from 3
+2 Received token from it's holder
+The Site: 2 Entering critical section
+The Site: 2 Exiting critical section
+Local Queue for site 2
+0 Received token request from 1
+2 Received token request from 0
+0 Received token from it's holder
+1 Received token from it's holder
+The Site: 1 Entering critical section
+The Site: 1 Exiting critical section
+Local Queue for site 1
+4
+3
+4 Received token from it's holder with a token request
+The Site: 4 Entering critical section
+The Site: 4 Exiting critical section
+Local Queue for site 4
+1
+1 Received token from it's holder
+3 Received token from it's holder
+The Site: 3 Entering critical section
+The Site: 3 Exiting critical section
+Local Queue for site 3
+
+
+Output set2:
+------------
+Raymond's algorithm
+Enter total node of sites you need: 7
+Enter the holder of site 0 : 0
+Enter the holder of site 1 : 0
+Enter the holder of site 2 : 0
+Enter the holder of site 3 : 1
+Enter the holder of site 4 : 1
+Enter the holder of site 5 : 2
+Enter the holder of site 6 : 2
+Holder of Site: 0 is 0
+Holder of Site: 1 is 0
+Holder of Site: 2 is 0
+Holder of Site: 3 is 1
+Holder of Site: 4 is 1
+Holder of Site: 5 is 2
+Holder of Site: 6 is 2
+Site 0 is Started
+Site 6 is Started
+Site 5 is Started
+Site 4 is Started
+Site 1 is Started
+Site 3 is Started
+Site 2 is Started
+The Site: 0 Entering critical section
+The Site: 0 Exiting critical section
+Local Queue for site 0
+6 Requested for token to 2
+1 Requested for token to 0
+5 Requested for token to 2
+2 Requested for token to 0
+3 Requested for token to 1
+1 Received token request from 3
+4 Requested for token to 1
+1 Received token request from 4
+2 Received token request from 6
+0 Received token request from 1
+1 Received token from it's holder
+The Site: 1 Entering critical section
+2 Received token request from 5
+The Site: 1 Exiting critical section
+Local Queue for site 1
+3
+4
+3 Received token from it's holder with a token request
+The Site: 3 Entering critical section
+The Site: 3 Exiting critical section
+Local Queue for site 3
+1
+1 Received token from it's holder
+4 Received token from it's holder
+The Site: 4 Entering critical section
+The Site: 4 Exiting critical section
+Local Queue for site 4
+0 Received token request from 2
+1 Received token request from 0
+4 Received token request from 1
+1 Received token from it's holder
+0 Received token from it's holder
+2 Received token from it's holder
+The Site: 2 Entering critical section
+The Site: 2 Exiting critical section
+Local Queue for site 2
+6
+5
+6 Received token from it's holder with a token request
+The Site: 6 Entering critical section
+The Site: 6 Exiting critical section
+Local Queue for site 6
+2
+2 Received token from it's holder
+5 Received token from it's holder
+The Site: 5 Entering critical section
+The Site: 5 Exiting critical section
+Local Queue for site 5

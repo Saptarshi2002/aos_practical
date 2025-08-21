@@ -1,0 +1,118 @@
+Set1:
+---- 
+
+Token based Ring topology
+Enter total number of processes: 5
+process_id: 0 p_hold: false Next-hop: 1
+process_id: 1 p_hold: false Next-hop: 2
+process_id: 2 p_hold: false Next-hop: 3
+process_id: 3 p_hold: false Next-hop: 4
+process_id: 4 p_hold: true Next-hop: 0
+4 Enters critical section.
+0 Requests for critical section.
+1 Received request from 0 but it is not p_hold so forwarding the request to the next hop
+2 Received request from 0 but it is not p_hold so forwarding the request to the next hop
+3 Received request from 0 but it is not p_hold so forwarding the request to the next hop
+4 Received request for critical section from 0 and it is p_hold and stores in the local queue
+3 Requests for critical section.
+4 Received request for critical section from 3 and it is p_hold and stores in the local queue
+1 Requests for critical section.
+2 Received request from 1 but it is not p_hold so forwarding the request to the next hop
+3 Received request from 1 but it is not p_hold so forwarding the request to the next hop
+4 Received request for critical section from 1 and it is p_hold and stores in the local queue
+2 Requests for critical section.
+3 Received request from 2 but it is not p_hold so forwarding the request to the next hop
+4 Received request for critical section from 2 and it is p_hold and stores in the local queue
+4 Exists critical section.
+The local queue  for 4 is:
+0
+3
+1
+2
+4 Forwards the token for: 0 to the next hop
+0 received the token.
+0 Enters critical section.
+0 Exists critical section.
+The local queue  for 0 is:
+3
+1
+2
+0 Forwards the token for: 3 to the next hop
+1 Forwards the token which is came for 3
+2 Forwards the token which is came for 3
+3 received the token.
+3 Enters critical section.
+3 Exists critical section.
+The local queue  for 3 is:
+1
+2
+3 Forwards the token for: 1 to the next hop
+4 Forwards the token which is came for 1
+0 Forwards the token which is came for 1
+1 received the token.
+1 Enters critical section.
+1 Exists critical section.
+The local queue  for 1 is:
+2
+1 Forwards the token for: 2 to the next hop
+2 received the token.
+2 Enters critical section.
+2 Exists critical section.
+
+
+Set2:
+----
+
+Token based Ring topology
+Enter total number of processes: 5 
+process_id: 0 p_hold: true Next-hop: 1
+process_id: 1 p_hold: false Next-hop: 2
+process_id: 2 p_hold: false Next-hop: 3
+process_id: 3 p_hold: false Next-hop: 4
+process_id: 4 p_hold: false Next-hop: 0
+0 Enters critical section.
+4 Requests for critical section.
+0 Received request for critical section from 4 and it is p_hold and stores in the local queue
+0 Exists critical section.
+The local queue  for 0 is:
+4
+0 Forwards the token for: 4 to the next hop
+1 Forwards the token which is came for 4
+2 Forwards the token which is came for 4
+3 Forwards the token which is came for 4
+4 received the token.
+4 Enters critical section.
+1 Requests for critical section.
+2 Received request from 1 but it is not p_hold so forwarding the request to the next hop
+3 Received request from 1 but it is not p_hold so forwarding the request to the next hop
+4 Received request for critical section from 1 and it is p_hold and stores in the local queue
+4 Exists critical section.
+The local queue  for 4 is:
+1
+4 Forwards the token for: 1 to the next hop
+0 Forwards the token which is came for 1
+1 received the token.
+1 Enters critical section.
+1 Exists critical section.
+2 Requests for critical section.
+3 Received request from 2 but it is not p_hold so forwarding the request to the next hop
+4 Received request from 2 but it is not p_hold so forwarding the request to the next hop
+0 Received request from 2 but it is not p_hold so forwarding the request to the next hop
+1 Received request for critical section from 2 and it is p_hold and stores in the local queue
+The local queue  for 1 is:
+2
+1 Forwards the token for: 2 to the next hop
+2 received the token.
+2 Enters critical section.
+3 Requests for critical section.
+2 Exists critical section.
+4 Received request from 3 but it is not p_hold so forwarding the request to the next hop
+0 Received request from 3 but it is not p_hold so forwarding the request to the next hop
+1 Received request from 3 but it is not p_hold so forwarding the request to the next hop
+2 Received request for critical section from 3 and it is p_hold and stores in the local queue
+The local queue  for 2 is:
+3
+2 Forwards the token for: 3 to the next hop
+3 received the token.
+3 Enters critical section.
+3 Exists critical section.

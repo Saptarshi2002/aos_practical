@@ -1,0 +1,17 @@
+...Ricart Agarwala Algorithm...
+
+There is multiple nodes and each of them want to enter the critical section so to maintain 
+mutual exclusion, progress, bounded wait or we can safety and liveliness and fairness
+each node will send a message for permission with time stamp to enter the critical section
+to every other nodes in the distributed system.Now for each node there are tree states (Released,
+Held, Requested). The node that received Request it will check it's own state (i) if it is in Released 
+state then immediately ok response will be send (ii) if the state is in Held state then the node id 
+with the request message will be stored in the local defered queue and (iii) if the state is
+Requested then the timestamp of the received request and own request timestamp will be compared and if
+own timestamp is greater then the ok response will be send other wise the received request will be 
+stored in the local defered queue too.
+When the node exits the critical section it will gracefully will send the ok response to all the nodes
+that are stored in the local defer queue.
+
+This process will be done concurrently in all the nodes in a synchronized manner.
+

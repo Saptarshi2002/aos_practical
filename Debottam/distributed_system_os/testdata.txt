@@ -1,0 +1,49 @@
+Test Data 1
+
+Input
+5, /* Number of vertices */
+9, /* Number of edgess */
+/* Edge pairs */
+0 3,
+0 2,
+1 3,
+2 3,
+2 1,
+3 1,
+4 1,
+4 0,
+0 4
+
+Output
+Adjacency Matrix
+0 0 1 1 1 
+0 0 0 1 0
+0 1 0 1 0 
+0 1 0 0 0
+1 1 0 0 0
+Reached Nodes from every nodes
+comment about the nodes from that every other node is reachable 
+
+Test Data 2
+
+Input
+5, /* Number of vertices */
+6, /* Number of edges */
+/* Edge pairs */
+0 1,
+1 2,
+2 3,
+3 4,
+4 0,
+1 3
+
+
+Output
+Adjacency Matrix
+0 1 0 0 0
+0 0 1 1 0
+0 0 0 1 0
+0 0 0 0 1
+1 0 0 0 0
+Reached Nodes from every nodes
+comment about the nodes from that every other node is reachable 

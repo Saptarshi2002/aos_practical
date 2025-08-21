@@ -1,0 +1,6 @@
+If a receive event is recorded in the snapshot, then the corresponding send event must also be recorded.
+
+But the opposite is not required:
+
+    If a send event is recorded, the receive may or may not be recorded.
+    (It could be "in transit.")

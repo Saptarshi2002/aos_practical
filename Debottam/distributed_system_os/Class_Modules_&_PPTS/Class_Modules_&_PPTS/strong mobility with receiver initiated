@@ -1,0 +1,12 @@
+ The term strong mobility is used to describe systems that can capture and move execution state with the agent. 
+Operationally, strong mobility guarantees that all variables will have identical values and the program counter 
+will be at the same position. Weakly mobile-agent systems, on the other hand, usually support the capture of most 
+of a program’s data, but restart the program from a predefined program point and thus require some programmer 
+involvement at each migration. The advantage of strong mobility is that the result of migrating is well defined 
+and easier to understand, but its disadvantage is that it is much more complex to implement efficiently.
+
+The most important advantage provided by strong mobility is the ability to support external 
+asynchronous migration requests (also known as forced mobility). This allows entities other 
+than the agent (such as other system components, an administrator, or the owner) to request 
+that an agent be moved. Forced mobility is useful for survivability, load-balancing, forced 
+isolation, and replication for fault-tolerance, and is an important aspect of the agile computing approach.
