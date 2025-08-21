@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;raymoond.RaymondalgorithmSimulation.java&apos; to &apos;RaymondAlgorithmSimulation.java&apos;&#x0D;&#x0A;- Original project: &apos;Assignment04&apos;&#x0D;&#x0A;- Original element: &apos;raymoond.RaymondalgorithmSimulation.java&apos;&#x0D;&#x0A;- Renamed element: &apos;raymoond.RaymondAlgorithmSimulation.java&apos;" description="Rename compilation unit &apos;RaymondalgorithmSimulation.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;raymoond{RaymondalgorithmSimulation.java" name="RaymondAlgorithmSimulation.java" references="false" stamp="1751125145988" version="1.0"/>
+</session>

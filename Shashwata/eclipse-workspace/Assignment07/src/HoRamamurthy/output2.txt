@@ -1,0 +1,101 @@
+Enter the number of processes: 6
+Process P0 created
+Process P1 created
+Process P2 created
+Process P3 created
+Process P4 created
+Process P5 created
+
+Enter the number of resources: 4
+
+Resource R0 created
+Resource R1 created
+Resource R2 created
+Resource R3 created
+
+Enter the number of sites: 2
+
+Site S0 created
+Site S1 created
+
+Central Server Created
+
+Which site do you want to assign process P0 to? 0
+Process P0 is added to Site S0
+Which site do you want to assign process P1 to? 0
+Process P1 is added to Site S0
+Which site do you want to assign process P2 to? 0
+Process P2 is added to Site S0
+Which site do you want to assign process P3 to? 1
+Process P3 is added to Site S1
+Which site do you want to assign process P4 to? 1
+Process P4 is added to Site S1
+Which site do you want to assign process P5 to? 1
+Process P5 is added to Site S1
+Which site do you want to assign resource R0 to? 0
+Resource R0 is added to Site S0
+Which site do you want to assign resource R1 to? 0
+Resource R1 is added to Site S0
+Which site do you want to assign resource R2 to? 1
+Resource R2 is added to Site S1
+Which site do you want to assign resource R3 to? 1
+Resource R3 is added to Site S1
+
+How many requests for resources can a process make? 2
+Process P3 is requesting Resource R1
+Process P3 acquired Resource R1
+Process P2 is requesting Resource R3
+Process P2 acquired Resource R3
+Process P4 is requesting Resource R3
+Process P4 is waiting for Resource R3 as Process P2 is holding it.
+Process P2 is requesting Resource R0
+Process P2 acquired Resource R0
+Process P1 is requesting Resource R2
+Process P1 acquired Resource R2
+Process P0 is requesting Resource R3
+Process P0 is waiting for Resource R3 as Process P2 is holding it.
+Process P3 is requesting Resource R3
+Process P3 is waiting for Resource R3 as Process P2 is holding it.
+Process P5 is requesting Resource R2
+Process P5 is waiting for Resource R2 as Process P1 is holding it.
+Process P0 is requesting Resource R2
+Process P0 is waiting for Resource R2 as Process P1 is holding it.
+Process P5 is requesting Resource R3
+Process P5 is waiting for Resource R3 as Process P2 is holding it.
+Process P4 is requesting Resource R0
+Process P4 is waiting for Resource R0 as Process P2 is holding it.
+Process P1 is requesting Resource R3
+Process P1 is waiting for Resource R3 as Process P2 is holding it.
+
+Starting Deadlock Detection: 
+
+Initiating Phase 1:
+
+Status Table for Site S0
+    R0	R1	R2	R3	
+P0  0	0	-1	-1	
+P1  0	0	1	-1	
+P2  1	0	0	1	
+
+Status Table for Site S1
+    R0	R1	R2	R3	
+P3  0	1	0	-1	
+P4  -1	0	0	-1	
+P5  0	0	-1	-1	
+
+The initial WFG constructed is: 
+   P0 P1 P2 P3 P4 P5 
+P0  0  1  1  0  0  0  
+P1  0  0  1  0  0  0  
+P2  0  0  0  0  0  0  
+P3  0  0  1  0  0  0  
+P4  0  0  1  0  0  0  
+P5  0  1  1  0  0  0  
+
+No cycle found in WFG
+
+
+Process P2 is releasing Resource R0
+Process P4 acquired Resource R0
+
+No cycle detected in Phase 1: No Deadlock

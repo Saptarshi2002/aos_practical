@@ -1,0 +1,53 @@
+package tmdpractical;
+
+import java.util.Random;
+
+public class Node extends Thread {
+	int id;
+	double weight=0;
+	
+	public Node(int id) {
+		this.id=id;
+	}
+	
+	public void run() {
+		TMDTest.server.givePermission(this);
+		try {
+			Thread.sleep(new Random().nextInt(5000));
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		for(int i=0;i<TMDTest.nummessages;i++) {
+			synchronized(this) {
+				int nodeid = new Random().nextInt(TMDTest.numnodes);
+				if(nodeid!=id) {
+					double toGiveWeight=weight/2;
+					weight-=toGiveWeight;
+					System.out.println("The Node "+id+" has sent message to Node "+nodeid+"\nCurrent Weight: "+weight);
+					TMDTest.nodes.get(nodeid).receiveMessage(id,toGiveWeight);
+				}
+			}
+		}
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		TMDTest.server.receiveWeight(id,weight);
+		weight=0;
+	}
+	
+	void receiveMessage(int id,double weight) {
+		synchronized(this) {
+			this.weight+=weight;
+		}
+	}
+	void receiveWeight(double weight) {
+		synchronized(this) {
+			this.weight+=weight;
+		}
+	}
+}

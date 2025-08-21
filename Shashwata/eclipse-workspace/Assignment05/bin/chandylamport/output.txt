@@ -1,0 +1,100 @@
+Chosen initiator node: 0
+[INIT]      Node 0 initiating snapshot at clock= 0
+[REC]       Initiator Node 0 recorded its state at clock= 0
+[MKR-S]     Node 0 is sending marker to Node 1 at clock= 1
+[MKR-S]     Node 0 is sending marker to Node 3 at clock= 2
+[MKR-S]     Node 0 is sending marker to Node 2 at clock= 3
+[MSG-S]     Node 1 sending message to Node 5 at clock= 0
+[MSG-S]     Node 5 sending message to Node 6 at clock= 0
+[MSG-S]     Node 2 sending message to Node 5 at clock= 0
+[MSG-S]     Node 4 sending message to Node 2 at clock= 0
+[MSG-S]     Node 6 sending message to Node 2 at clock= 0
+[MSG-S]     Node 3 sending message to Node 0 at clock= 0
+[MSG-R]     Node 2 received message from Node 4(0) at clock= 1
+[MSG-R]     Node 6 received message from Node 5(0) at clock= 1
+[MSG-TST]   Message from Node 3(0) to Node 0 has been recorded in the state of the channel 3-0 at clock= 4
+[MKR-R(1)]  Marker received on Node 3 for first time from Node 0 at clock= 3 and recorded state, and recorded state of channel 0-3 as empty
+[MKR-S]     Node 3 is sending marker to Node 0 at clock= 3
+[MSG-R]     Node 2 received message from Node 6(0) at clock= 4
+[MKR-R(1)]  Marker received on Node 2 for first time from Node 0 at clock= 5 and recorded state, and recorded state of channel 0-2 as empty
+[MKR-S]     Node 2 is sending marker to Node 5 at clock= 5
+[MSG-R]     Node 5 received message from Node 1(0) at clock= 1
+[MKR-R(1)]  Marker received on Node 1 for first time from Node 0 at clock= 2 and recorded state, and recorded state of channel 0-1 as empty
+[MKR-S]     Node 1 is sending marker to Node 0 at clock= 2
+[MKR-S]     Node 1 is sending marker to Node 4 at clock= 3
+[MKR-S]     Node 1 is sending marker to Node 5 at clock= 4
+[EXIT]      Node 1 has terminated at clock= 5
+[MSG-S]     Node 5 sending message to Node 6 at clock= 5
+[MSG-S]     Node 6 sending message to Node 5 at clock= 2
+[MKR-R(1)]  Marker received on Node 4 for first time from Node 1 at clock= 4 and recorded state, and recorded state of channel 1-4 as empty
+[MKR-S]     Node 4 is sending marker to Node 5 at clock= 4
+[MKR-S]     Node 4 is sending marker to Node 2 at clock= 5
+[EXIT]      Node 4 has terminated at clock= 6
+[MSG-R]     Node 5 received message from Node 2(0) at clock= 6
+[MKR-R(1+)] Marker received on Node 0 from Node 3 at clock= 5 and stopped recording messages from channel 3-0
+[MSG-R]     Node 6 received message from Node 5(5) at clock= 6
+[MKR-R(1+)] Marker received on Node 0 from Node 1 at clock= 5 and stopped recording messages from channel 1-0
+[EXIT]      Node 0 has terminated at clock= 5
+[MSG-R]     Node 5 received message from Node 6(2) at clock= 7
+[MKR-R(1)]  Marker received on Node 5 for first time from Node 1 at clock= 8 and recorded state, and recorded state of channel 1-5 as empty
+[MKR-S]     Node 5 is sending marker to Node 6 at clock= 8
+[MKR-R(1+)] Marker received on Node 2 from Node 4 at clock= 6 and stopped recording messages from channel 4-2
+[MKR-R(1+)] Marker received on Node 5 from Node 2 at clock= 9 and stopped recording messages from channel 2-5
+[MKR-R(1)]  Marker received on Node 6 for first time from Node 5 at clock= 9 and recorded state, and recorded state of channel 5-6 as empty
+[MKR-S]     Node 6 is sending marker to Node 5 at clock= 9
+[MKR-S]     Node 6 is sending marker to Node 3 at clock= 10
+[MKR-S]     Node 6 is sending marker to Node 2 at clock= 11
+[EXIT]      Node 6 has terminated at clock= 12
+[MKR-R(1+)] Marker received on Node 3 from Node 6 at clock= 11 and stopped recording messages from channel 6-3
+[EXIT]      Node 3 has terminated at clock= 11
+[MKR-R(1+)] Marker received on Node 2 from Node 6 at clock= 12 and stopped recording messages from channel 6-2
+[EXIT]      Node 2 has terminated at clock= 12
+[MKR-R(1+)] Marker received on Node 5 from Node 4 at clock= 9 and stopped recording messages from channel 4-5
+[MKR-R(1+)] Marker received on Node 5 from Node 6 at clock= 10 and stopped recording messages from channel 6-5
+[EXIT]      Node 5 has terminated at clock= 10
+
+
+GLOBAL STATE RECORDING:
+
+NODE 0:
+MESSAGES SENT TO: <empty>
+MESSAGES RECIEVED FROM: <empty>
+CHANNEL 1-0: <empty>
+CHANNEL 3-0: MSG(3,0) 
+
+NODE 1:
+MESSAGES SENT TO: NODE 5(0), 
+MESSAGES RECIEVED FROM: <empty>
+CHANNEL 0-1: <empty>
+
+NODE 2:
+MESSAGES SENT TO: NODE 5(0), 
+MESSAGES RECIEVED FROM: NODE 4(0,1), NODE 6(0,4), 
+CHANNEL 0-2: <empty>
+CHANNEL 4-2: <empty>
+CHANNEL 6-2: <empty>
+
+NODE 3:
+MESSAGES SENT TO: NODE 0(0), 
+MESSAGES RECIEVED FROM: <empty>
+CHANNEL 0-3: <empty>
+CHANNEL 6-3: <empty>
+
+NODE 4:
+MESSAGES SENT TO: NODE 2(0), 
+MESSAGES RECIEVED FROM: <empty>
+CHANNEL 1-4: <empty>
+
+NODE 5:
+MESSAGES SENT TO: NODE 6(0), NODE 6(5), 
+MESSAGES RECIEVED FROM: NODE 1(0,1), NODE 2(0,6), NODE 6(2,7), 
+CHANNEL 1-5: <empty>
+CHANNEL 2-5: <empty>
+CHANNEL 4-5: <empty>
+CHANNEL 6-5: <empty>
+
+NODE 6:
+MESSAGES SENT TO: NODE 2(0), NODE 5(2), 
+MESSAGES RECIEVED FROM: NODE 5(0,1), NODE 5(5,6), 
+CHANNEL 5-6: <empty>
+

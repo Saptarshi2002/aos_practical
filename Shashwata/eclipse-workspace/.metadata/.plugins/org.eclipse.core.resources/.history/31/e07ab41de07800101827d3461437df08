@@ -1,0 +1,20 @@
+package tmdpractical;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class TMDTest {
+	static ArrayList<Node> nodes=new ArrayList<Node>();
+	static CentralServer server=new CentralServer();
+	
+	public static void main(String args[]) {
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter Number of nodes: ");
+		int numnodes=sc.nextInt();
+		System.out.print("Enter Number of messages a node will send: ");
+		int nummessages=sc.nextInt();
+		
+		
+		
+	}
+}

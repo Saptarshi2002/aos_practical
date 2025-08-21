@@ -1,0 +1,66 @@
+package terminationDetection;
+
+import java.util.Random;
+
+public class Node extends Thread{
+	int id;
+	double weight=0;
+	
+	public Node(int id) {
+		this.id=id;
+	}
+	
+	public void run() {
+		TerminationDetectionTest.server.requestPermission(this);
+		try {
+			Thread.sleep(new Random().nextInt(5000));
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		for(int i=0;i<TerminationDetectionTest.numrequests;i++) {
+			try {
+				Thread.sleep(5000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			synchronized(this) {
+				if(weight==0) {
+					System.out.println("Node "+id+" is requesting permission from server to send msg");
+					TerminationDetectionTest.server.requestPermission(this);
+				}
+				Node randomNode=TerminationDetectionTest.nodes.get(new Random().nextInt(TerminationDetectionTest.numnodes));
+				if(randomNode!=this) {
+					double toGiveWeight=weight/2;
+					weight-=toGiveWeight;
+					System.out.println("Node "+id+" is sending msg to Node "+randomNode.id+" with weight="+toGiveWeight);
+					System.out.println("Current weight of Node "+id+" is "+weight);
+					randomNode.receiveMessage(id,toGiveWeight);
+				}
+			}
+		}
+		try {
+			Thread.sleep(2000*TerminationDetectionTest.numrequests);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		TerminationDetectionTest.server.receiveWeight(id,weight);
+		weight=0;
+	}
+	
+	void receiveMessage(int id, double weight) {
+		synchronized(this){
+			this.weight+=weight;
+			System.out.println("Node "+this.id+" received msg from Node "+id+" with weight "+weight+" and set its weight to "+this.weight);
+		}
+	}
+	void receiveWeight(double weight) {
+		synchronized(this) {
+			this.weight+=weight;
+			System.out.println("Node "+id+" received "+weight+" from sever and set its weight to "+this.weight);
+		}
+	}
+}

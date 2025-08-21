@@ -1,0 +1,21 @@
+package tmdpractical;
+
+public class CentralServer {
+	double weight;
+	
+	void receiveWeight(int id,double weight) {
+		synchronized(this){
+			this.weight+=weight;
+			System.out.println("The Central Server has received "+weight+" weight from Node "+id+" and set its weight to "+this.weight);
+		}
+	}
+	
+	void givePermission(Node node) {
+		synchronized(this){
+			double toGiveWeight=weight/2;
+			weight-=toGiveWeight;
+			System.out.println("The Central Server has given permission to Node "+node.id+" and set its weight to "+weight);
+			node.receiveWeight(toGiveWeight);
+		}
+	}
+}
